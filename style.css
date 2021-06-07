@@ -1,0 +1,125 @@
+.page_main {
+  border: 8px #F6A200 solid;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #F3E9F1;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.logo img {
+  width: 70%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+ul li {
+  list-style: none;
+}
+
+.recherche {
+  display: flex;
+  justify-content: center;
+}
+
+.ok {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: #dc0000;
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+.ok:hover {
+  background-color: red;
+}
+.ok:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.blocArticles__blocArticle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+.blocArticles__blocArticle__produit__article {
+  margin: 30px;
+  border: 2px solid #F3E9F1;
+  width: max-content;
+}
+.blocArticles__blocArticle__produit__article--name {
+  text-align: center;
+  background-color: #F3E9F1;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: blue;
+}
+.blocArticles__blocArticle__produit__article--price {
+  text-align: center;
+  border-bottom: #F3E9F1 solid 2px;
+  background-color: #F3E9F1;
+  font-weight: 600;
+  color: blue;
+  font-style: italic;
+}
+.blocArticles__blocArticle__produit__article--image img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+.blocArticles__blocArticle__produit__article--button {
+  width: 100%;
+}
+
+label {
+  color: purple;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+@media screen and (max-width: 576px) {
+  label {
+    text-align: center;
+  }
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2px;
+}
+
+.checkbox {
+  flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  padding: 10px;
+}
+
+.submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: center;
+  padding: 130px;
+}
+
+/*# sourceMappingURL=style.css.map */

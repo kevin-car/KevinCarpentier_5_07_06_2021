@@ -1,0 +1,44 @@
+.blocArticles{
+    &__blocArticle{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: space-around;
+        flex-wrap: wrap;
+        &__produit{
+
+            &__article{
+                margin: 30px;
+                border: 2px solid #F3E9F1;
+                width: max-content;
+                &--name{
+                    text-align: center;
+                    background-color: #F3E9F1;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: blue;
+
+                }
+                &--price{
+                    text-align: center;
+                    border-bottom: #F3E9F1 solid 2px ;
+                    background-color: #F3E9F1;
+                    font-weight: 600;
+                    color: blue;
+                    font-style: italic;
+                }
+                &--image{
+                    img{
+                        width: 300px;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+                }
+                &--button{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

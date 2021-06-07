@@ -1,0 +1,38 @@
+label{
+    color: purple;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+@media screen and (max-width: 576px){
+    label{
+        text-align: center;
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px;
+}
+
+
+.checkbox{
+    flex-direction: column;
+    justify-content: center;    
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    padding: 10px;
+}
+
+.submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: center;
+    padding: 130px;
+}

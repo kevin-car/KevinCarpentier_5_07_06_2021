@@ -1,0 +1,59 @@
+.page_main{
+    border: 8px #F6A200 solid;
+    min-height: 100vh;
+}
+
+.navbar{
+    background-color: #F3E9F1;
+}
+
+.logo{
+    img{
+        width: 70%;
+    }
+        display: flex;
+        justify-content: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    li{
+        list-style: none;
+    }
+}
+
+.recherche{
+    display: flex;
+    justify-content: center;
+}
+
+// Boutton Rechercher
+.ok {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+    &:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
+
+    &:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                    inset 2px 2px 3px rgba(0, 0, 0, .6);
+    }
+}
+

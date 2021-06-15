@@ -1,13 +1,10 @@
 .blocArticles{
-    &__blocArticle{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-content: space-around;
         flex-wrap: wrap;
-        &__produit{
-
-            &__article{
+            &__blocArticle{
                 margin: 30px;
                 border: 2px solid #F3E9F1;
                 width: max-content;
@@ -16,7 +13,7 @@
                     background-color: #F3E9F1;
                     font-weight: 600;
                     text-transform: uppercase;
-                    color: blue;
+                    color: rgb(0, 0, 0);
 
                 }
                 &--price{
@@ -24,21 +21,22 @@
                     border-bottom: #F3E9F1 solid 2px ;
                     background-color: #F3E9F1;
                     font-weight: 600;
-                    color: blue;
+                    color: rgb(0, 0, 0);
                     font-style: italic;
                 }
-                &--image{
+                &__image{
                     img{
                         width: 300px;
                         height: 200px;
                         object-fit: cover;
                     }
                 }
-                &--button{
+                &__bouton{
                     width: 100%;
+                    .btn{
+                        width: 100%;
+                    }
                 }
             }
-        }
-    }
 }
 

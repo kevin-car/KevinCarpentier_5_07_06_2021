@@ -49,39 +49,78 @@ ul li {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-.blocArticles__blocArticle {
+.boutonmenuprincipal {
+  background-color: #e83737;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.boutonmenuprincipal:hover {
+  background-color: #ff4444;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-child {
+  display: none;
+  background-color: #f28c8c;
+  min-width: 50px;
+}
+
+.dropdown-child a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:active .dropdown-child {
+  display: block;
+}
+
+.blocArticles {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-content: space-around;
   flex-wrap: wrap;
 }
-.blocArticles__blocArticle__produit__article {
+.blocArticles__blocArticle {
   margin: 30px;
   border: 2px solid #F3E9F1;
   width: max-content;
 }
-.blocArticles__blocArticle__produit__article--name {
+.blocArticles__blocArticle--name {
   text-align: center;
   background-color: #F3E9F1;
   font-weight: 600;
   text-transform: uppercase;
-  color: blue;
+  color: black;
 }
-.blocArticles__blocArticle__produit__article--price {
+.blocArticles__blocArticle--price {
   text-align: center;
   border-bottom: #F3E9F1 solid 2px;
   background-color: #F3E9F1;
   font-weight: 600;
-  color: blue;
+  color: black;
   font-style: italic;
 }
-.blocArticles__blocArticle__produit__article--image img {
+.blocArticles__blocArticle__image img {
   width: 300px;
   height: 200px;
   object-fit: cover;
 }
-.blocArticles__blocArticle__produit__article--button {
+.blocArticles__blocArticle__bouton {
+  width: 100%;
+}
+.blocArticles__blocArticle__bouton .btn {
   width: 100%;
 }
 
@@ -120,6 +159,47 @@ label {
   justify-content: left;
   text-align: center;
   padding: 130px;
+}
+
+.page_main_panier {
+  height: 100vh;
+  background-color: #F3E9F1;
+}
+
+.panier {
+  display: flex;
+}
+.panier__articles {
+  height: auto;
+  padding: 0, 0, 0, 0;
+}
+.panier__contact {
+  background-color: blue;
+  height: 100px;
+}
+
+.photoArticle {
+  width: 300px;
+}
+.photoArticle img {
+  width: 100%;
+  border: blueviolet 2px ridge;
+  border-radius: 10px;
+}
+
+.blocDescription {
+  text-align: center;
+}
+
+.blocQuantite {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.blocQuantite__blocQuantite__sousBloc {
+  display: flex;
+  flex-direction: column;
+  align-content: right;
 }
 
 /*# sourceMappingURL=style.css.map */

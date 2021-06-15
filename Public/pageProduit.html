@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orinoco</title>
+    <!-- fichier de style -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bootstrap-5.0.1/dist/css/bootstrap.min.css">
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript" src="../relier.js" defer></script>   
+
+</head>
+<body>
+    <!-- BARRE DE NAVIGATION  -->
+
+    <div class="page_main">
+        <div class="navbar navbar-expand-md navbar-light">
+            <a class="col-12 col-sm-6 col-md-4 lg-2 logo" >
+                <img src="images/logo.png" alt="logo de Orinoco avec un caddy">
+            </a>
+
+            <div class="recherche col-12 col-sm-12 col-md-4 col-lg-4" >
+            </div>
+
+            <ul class=" col-12 sm-4 col-md-4 lg-4">
+                <li class="nav-item"><a href="../index.html" class="nav-link text-dark font-weight-bold text-uppercase"> Produits </a></li>
+            </ul>
+
+        </div>
+        <!-- bloc Photo -->
+        <div class="container-fluid row">
+            <div class="photoArticle col-12 col-sm-12 col-md-12 col-lg-6">
+                <img src="#" alt="">
+            </div>
+            <div class="blocDescription col-12 col-sm-12 col-md-12 col-lg-6">
+                <h1 class="blocDescription--nomProduit">Ours</h1>
+                <p class="blocDescription--description">C'est un bel Ours</p>
+                <!-- Cette balise sera incrémentée par l'API en JS  -->
+                <div class="blocDescription--couleurs">
+                </div> 
+            </div>
+  
+        <!-- Bloc Description -->
+        <div class="blocQuantite container-fluid row">
+            <div class="blocQuantite__sousBloc ">
+                <p class="blocQuantite__prix"></p></p>
+                <input type="number" min="1" max="20" >
+                <button class="btn btn-success"> Ajouter au Panier</button>
+            </div>
+        </div>    
+
+
+    </div>
+
+</body>
+</html>

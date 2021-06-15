@@ -1,0 +1,18 @@
+.page_main_panier{
+    height: 100vh;
+    background-color: #F3E9F1;
+}
+
+.panier{
+   display: flex;
+    &__articles{
+        height: auto;
+        padding: 0, 0, 0, 0;
+
+    }
+    &__contact{
+        background-color: blue;
+        height: 100px
+    }
+}
+

@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orinoco</title>
+    <!-- Feuille de  style -->
     <link rel="stylesheet" href="style.css">
+        <!-- Bootstrap -->
     <link rel="stylesheet" href="Public/bootstrap-5.0.1/dist/css/bootstrap.min.css">
+    <!-- LE fichier de script -->
     <script src="monscript.js" defer></script>
-    
+
 </head>
 <body>
     <!-- BARRE DE NAVIGATION  -->
-
     <div class="page_main">
         <div class="navbar navbar-expand-md navbar-light">
             <a class="col-12 col-sm-6 col-md-4 lg-2 logo" >
@@ -20,45 +22,22 @@
             </a>
             <div class="recherche col-12 col-sm-12 col-md-6 col-lg-4" >
                 <input type="text" name="searchengine" size="30">
-                <button class="ok" type="button">Rechercher</button>
+                <button class="ok " type="button">Rechercher</button>
             </div>
 
             <ul class=" col-12 sm-12 col-md-4 lg-4">
                 <li class="nav-item"><a href="./Public/MonPanier.html" class="nav-link text-dark font-weight-bold text-uppercase"> Mon panier </a></li>
                 <li class="nav-item"><a href="./Public/ContactezNous.html" class="nav-link text-dark font-weight-bold text-uppercase"> Nous contacter </a></li>
             </ul>
-
-
-
         </div>
+        <!-- Le bloc qui contient tous les articles à vendre -->
         <div class="blocArticles container-fluid">
-
-            <div class='blocArticles__blocArticle'>
-
-                <template class="blocArticles__blocArticle__produit">
-                    <div class="blocArticles__blocArticle__produit__article">
-                        <div class="blocArticles__blocArticle__produit__article--name"></div>
-                        <div class="blocArticles__blocArticle__produit__article--price"></div>
-                        <div class="blocArticles__blocArticle__produit__article--image"></div>
-                        <a href="#"><button type="button" class="btn btn-success blocArticles__blocArticle__produit__article--button">
-                            VOIR CET ARTICLE                        
-                        </button></a>
-                    </div>
-
-                </template>
-
-  
-            </div>
-
-
-        </div>
         </div>
 
-
-
-
-
+        
     </div>
+    
+
 
 </body>
 </html>

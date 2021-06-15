@@ -1,0 +1,26 @@
+.photoArticle{
+    width:300px;
+    img{
+        width: 100%;
+        border: blueviolet 2px ridge;
+        border-radius: 10px;
+    }
+}
+
+.blocDescription{
+    text-align: center;
+
+}
+
+.blocQuantite{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+    &__blocQuantite__sousBloc{
+        display: flex;
+        flex-direction: column;
+        align-content: right;
+    }
+}
+

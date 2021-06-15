@@ -4,36 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orinoco</title>
+    <title>Orinoco - Mon Panier</title>
+    <!-- fichier de style -->
     <link rel="stylesheet" href="../style.css">
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="./bootstrap-5.0.1/dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="monscript.js" defer></script>
-
+    <!-- fichier de script -->
+    <script type="text/javascript" src="../monscript.js" defer></script>
 </head>
 <body>
     <!-- BARRE DE NAVIGATION  -->
 
-    <div class="page_main">
+    <div class="page_main_panier">
         <div class="navbar navbar-expand-md navbar-light">
             <a class="col-12 col-sm-6 col-md-4 lg-2 logo" >
                 <img src="images/logo.png" alt="logo de Orinoco avec un caddy">
             </a>
-
+            
             <div class="recherche col-12 col-sm-12 col-md-4 col-lg-4" >
-                <input type="text" name="searchengine" size="10">
             </div>
 
             <ul class=" col-12 sm-4 col-md-4 lg-4">
                 <li class="nav-item"><a href="../index.html" class="nav-link text-dark font-weight-bold text-uppercase"> Produits </a></li>
-
+                <li class="nav-item"><a href="ContactezNous.html" class="nav-link text-dark font-weight-bold text-uppercase"> Nous contacter </a></li>
             </ul>
-
-
-
-        </div>
         </div>
 
-    </div>
+        <div class="panier">
+            <div class=" panier__articles  col-12 col-sm-12 col-md-12 col-lg-12">
+                <table class="table table-warning table-striped">
+                    <thead>
+                      <tr>
+                        <th class="bg-primary">Article</th>
+                        <th class="bg-primary">Variante de l'article</th>
+                        <th class="bg-primary">Qté</th>
+                        <th class="bg-primary">prix TTC Unitaire</th>
+                        <th class="bg-primary">prix Total </th>
+
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Nounours</td>
+                        <td>Marron</td>
+                        <td>5</td>
+                        <td>28€</td>
+                        <td>150€</td>
+                    </tbody>
+                  </table>
+            </div>
+
+            <div class="panier__contact ">
+            </div>
+        </div>
+    </div> 
+
+
+
 
 </body>
 </html>

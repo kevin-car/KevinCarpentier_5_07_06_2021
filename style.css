@@ -202,4 +202,20 @@ label {
   align-content: right;
 }
 
+.blocSelecteur {
+  left: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.blocSelecteur__selectionCouleur {
+  text-align: center;
+  width: 40% !important;
+  justify-content: center;
+}
+.blocSelecteur__exempleCouleur {
+  width: 20px;
+  height: 20px;
+}
+
 /*# sourceMappingURL=style.css.map */

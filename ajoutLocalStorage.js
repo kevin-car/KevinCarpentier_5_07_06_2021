@@ -27,16 +27,24 @@ button.addEventListener("click", function(){
 
     let articleAjout = new AjoutPanier(nom, prixUnitaire, quantite, couleur)
     console.log(articleAjout)
-    var articlesJson = JSON.stringify(articleAjout)
-    console.log(articlesJson)
 
-    var ArticleforBAsket = typeof(JSON)
+    // on recupère nos objets déjà présents dans le panier
+    var monlocalStorage = localStorage.getItem("panier")
+    console.log(monlocalStorage)
+    // on modifie ces données pour les récupérer dans un tableau (dans une variable)
+    var monlocalStorageparse = JSON.parse(monlocalStorage)
+    console.log(monlocalStorageparse)
 
-    ArticleforBAsket = ArticleforBAsket.push(articlesJson)
+    // on ajout la nouvelle donnée dans ce tableau 
+    monlocalStorageparse.push(articleAjout)
 
-    console.log(ArticleforBAsket)
+    // On remet ce tableau sous forme de string
+    var monlocalStorageJSON = JSON.stringify(monlocalStorageparse)
+
+    // on renvoie ce nouvel article avec 
+    localStorage.setItem("panier", monlocalStorageJSON)
+
     // console.log(panier.json)
-
    })
    
 

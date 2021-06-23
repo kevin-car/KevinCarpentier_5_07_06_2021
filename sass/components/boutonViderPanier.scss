@@ -1,6 +1,11 @@
 .viderLePanier{
-    background-color: red;
     display: flex;
     text-align: right;    
     justify-content: right;
     }
+
+.container__button{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}

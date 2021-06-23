@@ -25,6 +25,9 @@
 
     <!-- fichier de script -->
     <script type="text/javascript" src="../recupLocalStorage.js" defer></script>
+    <script type="text/javascript" src="../js/viderPanier.js" defer></script>
+    <script type="text/javascript" src="../js/regex.js" defer></script>
+
 
 
 </head>
@@ -71,7 +74,9 @@
                         <td class="bg-secondary monPrixTotal">0€</th>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-warning viderLePanier">Vider Le Panier</button>
+                <div class="container container__button">
+                    <button type="button" class="btn btn-warning pull-right viderLePanier">VIDER LE PANIER</button>
+                </div>
             </div>
             <div class="panier__contact ">
             </div>
@@ -83,17 +88,17 @@
             <div class="row form-group">
                 <label for="nomPrenom" class="col-sm-4">Nom Complet</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" id="nomPrenom" placeholder="NOM">
+                    <input type="text" class="form-control" id="clientNom" placeholder="NOM">
                 </div>
                 <div class="col-sm-3 ">
-                    <input type="text" class="form-control" id="nomPrenom" placeholder="Prénom">
+                    <input type="text" class="form-control" id="clientPrenom" placeholder="Prénom">
                 </div>
             </div>
             <!-- ADRESSE -->
             <div class="mb-3 row">
                 <label for="adresse" class="col-sm-4 ">Adresse </label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="adresse"
+                    <input type="text" class="form-control" id="clientAdresse"
                         placeholder="Exemple : 3 impasse qui n'existe pas">
                 </div>
             </div>
@@ -101,7 +106,7 @@
             <div class="mb-3 row">
                 <label for="codePostal" class="col-sm-4 ">Code Postal</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="codePostal" placeholder="Exemple : 75001">
+                    <input type="text" class="form-control" id="clientCodePostal" placeholder="Exemple : 75001">
                 </div>
             </div>
             <!-- VILLE -->
@@ -112,17 +117,19 @@
             <div class="mb-3 row">
                 <label for="email" class="col-sm-4 ">Adresse Email</label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" id="email" placeholder="Exemple : orinco@gmail.com ">
+                    <input type="email" class="form-control" id="clientEmail" placeholder="Exemple : orinco@gmail.com ">
                 </div>
             </div>
             <!-- TELEPHONE -->
             <div class="mb-3 row">
                 <label for="telephone" class="col-sm-4 ">Téléphone</label>
                 <div class="col-sm-6">
-                    <input type="tel" class="form-control" id="telephone" placeholder="0607080910 ">
+                    <input type="tel" class="form-control" id="clientTelephone" placeholder="0607080910 ">
                 </div>
             </div>
-
+            <div class="container validerLaCommande">
+                <button type="button" class="btn btn-warning pull-center viderLePanier">VALIDER LA COMMANDE</button>
+            </div>
 
         </div>
 

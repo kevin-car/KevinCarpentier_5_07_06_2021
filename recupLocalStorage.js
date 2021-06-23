@@ -1,15 +1,11 @@
 
     // je recupère le localStorage
     localStorageBrut = localStorage.panier
-    console.log(localStorageBrut)
     // je le convertis en donnée utilisable
     localStorageObjets = JSON.parse(localStorageBrut)
-    console.log(localStorageObjets)
 
 
 // je créé la boucle qui va alimenter le tableau 
-console.log()
-
     for(i=0; i<localStorageObjets.length; i++){
         // Je créé les colonnes
         let colonneArticle = document.createElement("td")
@@ -52,17 +48,13 @@ console.log()
     for(i=0 ; i < PrixPanier.length ; i++){
         listePrix[i] = listePrix[i].substring("€",listePrix[i].length-1)
         listePrix[i] = parseInt(listePrix[i])
-        console.log(listePrix[i])
     }
-    console.log(listePrix)
 
     // Créer la variable qui contient le prix total
     var MyPriceTotal = 0
     // faire une boucle qui ajoutera la somme au prix total
     for(i=0; i<listePrix.length ; i++){
         MyPriceTotal = MyPriceTotal + listePrix[i]
-        console.log(MyPriceTotal)
     }
     // On renvoie la somme total dans la case prévue à cet effet
     prixTotal.textContent = MyPriceTotal + "€"
-    console.log(prixTotal)

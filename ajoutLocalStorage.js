@@ -67,12 +67,6 @@ button.addEventListener("click", function () {
         if (AjoutNouvelleLigne == true) {
             AjoutSiTrue()
         }
-
-
-
-
-
-
 })
 
 

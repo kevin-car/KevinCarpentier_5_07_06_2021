@@ -189,6 +189,7 @@ label {
 
 .blocDescription {
   text-align: center;
+  color: #cc0dcc;
 }
 
 .blocQuantite {
@@ -216,6 +217,17 @@ label {
 .blocSelecteur__exempleCouleur {
   width: 20px;
   height: 20px;
+}
+
+.blocSelecteur__selectionCouleur {
+  background-color: "Pale B";
+}
+
+.viderLePanier {
+  background-color: red;
+  display: flex;
+  text-align: right;
+  justify-content: right;
 }
 
 /*# sourceMappingURL=style.css.map */

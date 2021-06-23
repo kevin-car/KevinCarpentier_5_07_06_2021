@@ -17,7 +17,7 @@ function getArticle() {
             return (articles)
         })
         .catch(function (error) {
-            console.log("erreur du get article")
+            console.log(error, "erreur du get article")
         })
 }
 

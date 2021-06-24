@@ -1,16 +1,26 @@
-
+if (localStorage.panier == null) {
+    localStorage.setItem("panier", "[]")
+}
     // je recupère le localStorage
-    localStorageBrut = localStorage.panier
+
+        localStorageBrut = localStorage.panier
     // je le convertis en donnée utilisable
     localStorageObjets = JSON.parse(localStorageBrut)
 
 
 // je créé la boucle qui va alimenter le tableau 
     for(i=0; i<localStorageObjets.length; i++){
-        // Je créé les colonnes
+        
+         
+        
+         // Je créé les colonnes
         let colonneArticle = document.createElement("td")
         let colonneCouleur = document.createElement("td")
         let colonneQuantite = document.createElement("td")
+        let colonneBoutonSupprimer = document.createElement("td")
+        colonneBoutonSupprimer.innerHTML = (`<button color="${localStorageObjets[i].couleur}" id="${localStorageObjets[i].name}" type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button> `)
         let colonnePrixTTC = document.createElement("td")
         let colonnePrixTotal = document.createElement("td")
         // j'alimente mes colonnes (les variables en tout cas)
@@ -26,6 +36,7 @@
         myLigne.appendChild(colonneArticle)
         myLigne.appendChild(colonneCouleur)
         myLigne.appendChild(colonneQuantite)
+        myLigne.appendChild(colonneBoutonSupprimer)
         myLigne.appendChild(colonnePrixTTC)
         myLigne.appendChild(colonnePrixTotal)
         // je vais chercher l'emplacement du DOM et j'y insère ma nouvelle ligne
@@ -58,3 +69,4 @@
     }
     // On renvoie la somme total dans la case prévue à cet effet
     prixTotal.textContent = MyPriceTotal + "€"
+

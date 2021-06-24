@@ -71,7 +71,6 @@ function displayElements(myarticles) {
         ` 
         <option class="option" value=${colorName} >${colorName}</option>
         `
-        // document.querySelector(".form-control").style.backgroundColor = "yellow !important";
     }
 }
 

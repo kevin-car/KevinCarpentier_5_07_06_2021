@@ -178,6 +178,16 @@ label {
   height: 100px;
 }
 
+.blocFormulaire {
+  display: flex;
+  align-items: flex-start;
+}
+
+.comErreur {
+  display: none;
+  color: redsq;
+}
+
 .photoArticle {
   width: 300px;
 }

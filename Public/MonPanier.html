@@ -26,9 +26,9 @@
     <!-- fichier de script -->
     <script type="text/javascript" src="../recupLocalStorage.js" defer></script>
     <script type="text/javascript" src="../js/viderPanier.js" defer></script>
-    <script type="text/javascript" src="../js/regex.js" defer></script>
-
-
+    <script type="text/javascript" src="../js/formulaire.js" defer></script>
+    <script type="text/javascript" src="../js/fetchApiGouv.js" defer></script>
+    <script type="text/javascript" src="../js/supprimerArticle.js" defer></script>
 
 </head>
 
@@ -60,6 +60,7 @@
                             <th class="bg-secondary">Article</th>
                             <th class="bg-secondary">Variante de l'article</th>
                             <th class="bg-secondary">Qté</th>
+                            <th class="bg-secondary"></th>
                             <th class="bg-secondary">prix TTC Unitaire</th>
                             <th class="bg-secondary">prix Total </th>
                         </tr>
@@ -68,7 +69,8 @@
                     </tbody>
                     <tbody class=" table table-danger prixTotal">
                         <td class="bg-secondary"></th>
-                        <td class="bg-secondary"></th>
+                        <td class="bg-secondary"></th>                        <td class="bg-secondary"></th>
+
                         <td class="bg-secondary"></th>
                         <td class="bg-secondary">Prix Total : </th>
                         <td class="bg-secondary monPrixTotal">0€</th>
@@ -85,50 +87,65 @@
         <!-- FORMULAIRE -->
         <div class="formulaire2 container">
             <!-- NOM PRENOM -->
-            <div class="row form-group">
+            <div class="row form-group blocFormulaire">
                 <label for="nomPrenom" class="col-sm-4">Nom Complet</label>
-                <div class="col-sm-3">
+                <div class="col-sm-3 ">
                     <input type="text" class="form-control" id="clientNom" placeholder="NOM">
+                    <p class="comErreur comErreurNom">Merci d'entrer un nom correct</p>
                 </div>
                 <div class="col-sm-3 ">
                     <input type="text" class="form-control" id="clientPrenom" placeholder="Prénom">
+                    <p class="comErreur comErreurPrenom">Merci d'entrer un prenom correct</p>
                 </div>
             </div>
             <!-- ADRESSE -->
-            <div class="mb-3 row">
+            <div class="mb-3 row blocFormulaire">
                 <label for="adresse" class="col-sm-4 ">Adresse </label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="clientAdresse"
                         placeholder="Exemple : 3 impasse qui n'existe pas">
+                    <p class="comErreur comErreurAdresse">Merci d'entrer une adresse correcte</p>
+
                 </div>
             </div>
             <!-- CODE POSTAL -->
-            <div class="mb-3 row">
+            <div class="mb-3 row blocFormulaire">
                 <label for="codePostal" class="col-sm-4 ">Code Postal</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="clientCodePostal" placeholder="Exemple : 75001">
+                    <p class="comErreur comErreurCodePostal">Merci d'entrer un code postal correcte</p>
                 </div>
+
             </div>
             <!-- VILLE -->
-            <div class="mb-3 row">
+            <div class="mb-3 row blocFormulaire">
                 <label for="Ville" class="col-sm-4 ">Ville</label>
+                <div class="col-sm-6">
+                    <select class="form-control blocSelecteur__selectionVille">
+                    </select>
+                </div>
+
             </div>
             <!-- EMAIL -->
-            <div class="mb-3 row">
+            <div class="mb-3 row blocFormulaire">
                 <label for="email" class="col-sm-4 ">Adresse Email</label>
                 <div class="col-sm-6">
                     <input type="email" class="form-control" id="clientEmail" placeholder="Exemple : orinco@gmail.com ">
+                    <p class="comErreur comErreurMail">Merci d'entrer une adresse mail correcte</p>
+
                 </div>
             </div>
             <!-- TELEPHONE -->
-            <div class="mb-3 row">
+            <div class="mb-3 row blocFormulaire">
                 <label for="telephone" class="col-sm-4 ">Téléphone</label>
                 <div class="col-sm-6">
                     <input type="tel" class="form-control" id="clientTelephone" placeholder="0607080910 ">
+                    <p class="comErreur comErreurTelephone">Merci d'entrer un numéro de téléphone correct</p>
+
                 </div>
             </div>
-            <div class="container validerLaCommande">
-                <button type="button" class="btn btn-warning pull-center viderLePanier">VALIDER LA COMMANDE</button>
+            <div class="container ">
+                <button type="button" class="btn btn-warning pull-center validerLaCommande">VALIDER LA COMMANDE</button>
             </div>
 
         </div>

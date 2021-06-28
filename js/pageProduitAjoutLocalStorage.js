@@ -13,11 +13,19 @@ class AjoutPanier {
 let button = document.querySelector(".btn-success")
 // Ecouteur d'événement, lors du clique, on récupère toutes les infos
 button.addEventListener("click", function () {
+
+
     quantite = document.querySelector(".blocQuantite__prix--quantite").value
     nom = document.querySelector(".blocDescription--nomProduit").innerHTML
     couleur = document.querySelector(".blocSelecteur__selectionCouleur").value
     prixUnitaire = document.querySelector(".blocQuantite__prix strong").innerHTML
     theID = $_GET("data-id")
+    console.log(quantite)
+    if(quantite == ""){
+        alert("la quantité est nulle, merci d'ajouter au minimum 1 article avant d'ajouter au panier. ")
+    }else{
+
+  
 
     let articleAjout = new AjoutPanier(nom, prixUnitaire, quantite, couleur, theID)
 
@@ -54,19 +62,20 @@ button.addEventListener("click", function () {
             break
         }
     }
-        // FONCTION si on ne trouve pas la ligne dans le tableau, alors on en créé une nouvelle
-        function AjoutSiTrue() {
-            // on ajout la nouvelle donnée dans ce tableau
-            monlocalStorageparse.push(articleAjout)
-            // On remet ce tableau sous forme de string
-            var monlocalStorageJSON = JSON.stringify(monlocalStorageparse)
-            // on renvoie ce nouvel article dans le panier
-            localStorage.setItem("panier", monlocalStorageJSON)
-        }
-        // Si l'ajout n'a pas été annulé par la boucle, on créé la ligne
-        if (AjoutNouvelleLigne == true) {
-            AjoutSiTrue()
-        }
+    // FONCTION si on ne trouve pas la ligne dans le tableau, alors on en créé une nouvelle
+    function AjoutSiTrue() {
+        // on ajout la nouvelle donnée dans ce tableau
+        monlocalStorageparse.push(articleAjout)
+        // On remet ce tableau sous forme de string
+        var monlocalStorageJSON = JSON.stringify(monlocalStorageparse)
+        // on renvoie ce nouvel article dans le panier
+        localStorage.setItem("panier", monlocalStorageJSON)
+    }
+    // Si l'ajout n'a pas été annulé par la boucle, on créé la ligne
+    if (AjoutNouvelleLigne == true) {
+        AjoutSiTrue()
+    }
+}
 })
 
 

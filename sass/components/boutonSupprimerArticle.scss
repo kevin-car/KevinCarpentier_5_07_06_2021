@@ -1,0 +1,28 @@
+.close{
+    background-color: bisque;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid rgb(211, 208, 57);
+    position: static;
+    top: 120px;
+    &:active{
+        box-shadow: 1px 1px 3px 3px tan;
+    }
+}
+
+.close>span{
+    color: red;
+    font-weight: 800;
+}
+
+.coeurTableau{
+    td {
+        vertical-align: middle;
+    }
+}

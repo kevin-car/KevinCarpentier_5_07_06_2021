@@ -1,5 +1,4 @@
 // Fonction Principale 
-
 Main()
 async function Main() {
     const articles = await getArticle()
@@ -21,7 +20,6 @@ function getArticle() {
         })
 }
 
-
 function displayArticle(articles) {
 
     for (let i = 0; i < articles.length; i++) {
@@ -39,9 +37,7 @@ function displayArticle(articles) {
         myBtn.setAttribute("data-id", articles[i]._id)
         myBtn.setAttribute("href", "./Public/pageProduit.html?data-id=" + articles[i]._id)
 
-
         // je créé les petits-enfants
-
         let blocImage = document.createElement("div")
         let blocBouton = document.createElement("div")
 
@@ -78,21 +74,4 @@ function displayArticle(articles) {
         blocArticles.appendChild(newArticle)
     }
 }
-
 const boutoncliquer = document.getElementsByClassName("blocArticles__blocArticle__bouton--myBouton")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

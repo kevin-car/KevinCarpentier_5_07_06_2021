@@ -85,6 +85,11 @@ ul li {
   display: block;
 }
 
+* {
+  font-size: 1.04em;
+  font-family: Cantarell !important;
+}
+
 .blocArticles {
   display: flex;
   flex-direction: row;
@@ -162,7 +167,7 @@ label {
 }
 
 .page_main_panier {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #F3E9F1;
 }
 
@@ -200,6 +205,7 @@ label {
 .blocDescription {
   text-align: center;
   color: #cc0dcc;
+  font-style: italic;
 }
 
 .blocQuantite {
@@ -243,6 +249,39 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: end;
+}
+
+.boutonValider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.close {
+  background-color: bisque;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #d3d039;
+  position: static;
+  top: 120px;
+}
+.close:active {
+  box-shadow: 1px 1px 3px 3px tan;
+}
+
+.close > span {
+  color: red;
+  font-weight: 800;
+}
+
+.coeurTableau td {
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=style.css.map */

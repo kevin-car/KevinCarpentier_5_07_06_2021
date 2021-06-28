@@ -19,7 +19,7 @@ var Telephone = document.querySelector("#clientTelephone")
 // Si c'est le cas, le commentaire reste (ou devient) inexistant
 // S'il est mauvais le commentaire apparait en rouge
 
-nomdeFamille.addEventListener("input", function () {
+nomdeFamille.addEventListener("mousemove", function () {
     if (verifString.test(nomdeFamille.value) == true) {
         nomdeFamille.style.border = " 2px solid green"
         document.querySelector(".comErreurNom").style.display = "none"
@@ -29,7 +29,8 @@ nomdeFamille.addEventListener("input", function () {
         nomdeFamille.style.border = " 2px solid red";
         document.querySelector(".comErreurNom").style.display = "block"
         document.querySelector(".comErreurNom").style.color = "red"
-    }})
+    }
+})
 
 Prenom.addEventListener("input", function () {
     if (verifString.test(Prenom.value) == true) {
@@ -40,7 +41,8 @@ Prenom.addEventListener("input", function () {
         Prenom.style.border = " 2px solid red";
         document.querySelector(".comErreurPrenom").style.display = "block"
         document.querySelector(".comErreurPrenom").style.color = "red"
-    }})
+    }
+})
 
 adresse.addEventListener("input", function () {
     if (verifSpecialCharacter.test(adresse.value) == false) {
@@ -51,7 +53,8 @@ adresse.addEventListener("input", function () {
         adresse.style.border = " 2px solid red";
         document.querySelector(".comErreurAdresse").style.display = "block"
         document.querySelector(".comErreurAdresse").style.color = "red"
-    }})
+    }
+})
 
 codePostal.addEventListener("input", function () {
     if (verifCodePostal.test(codePostal.value) == true) {
@@ -62,7 +65,8 @@ codePostal.addEventListener("input", function () {
         codePostal.style.border = " 2px solid red";
         document.querySelector(".comErreurCodePostal").style.display = "block"
         document.querySelector(".comErreurCodePostal").style.color = "red"
-    }})
+    }
+})
 
 adresseMail.addEventListener("input", function () {
     if (verifMail.test(adresseMail.value) == true) {
@@ -73,7 +77,8 @@ adresseMail.addEventListener("input", function () {
         adresseMail.style.border = " 2px solid red";
         document.querySelector(".comErreurMail").style.display = "block"
         document.querySelector(".comErreurMail").style.color = "red"
-    }})
+    }
+})
 
 Telephone.addEventListener("input", function () {
     if (verifTelephone.test(Telephone.value) == true) {
@@ -84,16 +89,17 @@ Telephone.addEventListener("input", function () {
         Telephone.style.border = " 2px solid red";
         document.querySelector(".comErreurTelephone").style.display = "block"
         document.querySelector(".comErreurTelephone").style.color = "red"
-    }})
+    }
+})
 
 console.log(nomdeFamille)
 
 // Fonction qui intervient lors du clique du bouton, elle vérifie les champs affiche un promp
 // et ajoute une ligne sous l'élément en erreur
 let ValiderPAnier = function () {
-    if(document.querySelector(".monPrixTotal").innerText == "0€"){
+    if (document.querySelector(".monPrixTotal").innerText == "0€") {
         window.alert("Votre panier est vide")
-    }else{
+    } else {
         if (verifString.test(nomdeFamille.value) == false) {
             window.alert("Merci d'entrer un nom de famille valide")
         }
@@ -111,13 +117,52 @@ let ValiderPAnier = function () {
         }
         else if (verifTelephone.test(Telephone.value) == false) {
             window.alert("Merci d'entrer un numéro de téléphone correct")
-            }
-        else{
+        }
+        else {
             window.alert("Merci pour votre commande")
         }
     }
 }
+
+const requetePOST = function () {
+
+    let contact = {
+        lastNAme: document.querySelector("#clientNom").value,
+        firstNAme: document.querySelector("#clientPrenom").value,
+        adress: document.querySelector("#clientAdresse").value,
+        city: document.querySelector(".blocSelecteur__selectionVille").value,
+        email: document.querySelector("#clientEmail").value
+    }
+
+    let products = [
+        localStorage
+    ]
+
+
+    const promise01 = function requetePost() {
+        fetch("http://localhost:3000/api/teddies/order",
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: "post",
+                body: JSON.stringify({ contact, products })
+            })
+            .then(function (res) { console.log(res) })
+            .catch(function (res) { console.log(res) })
+        console.log(JSON.stringify(contact, products))
+
+    }
+    promise01()
+
+}
+
+
 // affecter la fonction à mon bouton du formulaire :  "valider la commande"
+// cela lance la validation du panier et la requete API 
 document.querySelector(".validerLaCommande").addEventListener("click", function () {
     ValiderPAnier()
+    requetePOST()
 })
+

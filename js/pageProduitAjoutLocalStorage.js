@@ -13,8 +13,6 @@ class AjoutPanier {
 let button = document.querySelector(".btn-success")
 // Ecouteur d'événement, lors du clique, on récupère toutes les infos
 button.addEventListener("click", function () {
-
-
     quantite = document.querySelector(".blocQuantite__prix--quantite").value
     nom = document.querySelector(".blocDescription--nomProduit").innerHTML
     couleur = document.querySelector(".blocSelecteur__selectionCouleur").value

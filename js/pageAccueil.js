@@ -75,3 +75,6 @@ function displayArticle(articles) {
     }
 }
 const boutoncliquer = document.getElementsByClassName("blocArticles__blocArticle__bouton--myBouton")
+
+variable = document.querySelector('col-sm-4')
+console.log(variable)

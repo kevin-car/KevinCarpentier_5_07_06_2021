@@ -1,11 +1,11 @@
 //Règles de Control Regex
 let verifString = /[a-zA-Z]{2}$/;
 let verifNumber = /[0-9]/;
-let verifMail = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/y;
+let verifMail = /^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i;
 let verifSpecialCharacter = /[§!@#$%^&*(),.?":{}|<>]/;
 
 let verifCodePostal = /^[0-9]{5}$/
-let verifTelephone = /\+?\(?\d{2,4}\)?[\d\s-]{3,}/
+let verifTelephone = /\+?\(?\d{2,4}\)?[\d\s-]{8,}/
 
 // on retrouve les input grâce à leurs ID
 var nomdeFamille = document.querySelector("#clientNom")
@@ -15,11 +15,98 @@ var codePostal = document.querySelector("#clientCodePostal")
 var adresseMail = document.querySelector("#clientEmail")
 var Telephone = document.querySelector("#clientTelephone")
 
+// on retrouve les input grâce à leurs ID
+var GLOBAL = {
+//     Input_DOM : {
+//         nomdeFamille: document.querySelector("#clientNom"),
+//         Prenom : document.querySelector("#clientPrenom"),
+//         adresse : document.querySelector("#clientAdresse"),
+//         codePostal : document.querySelector("#clientCodePostal"),
+//         adresseMail : document.querySelector("#clientEmail"),
+//         Telephone : document.querySelector("#clientTelephone")
+//    },
+//    Commentaire : {
+//         EmpComm_nomdeFamille : document.querySelector(".comErreurNom"),
+//         EmpComm_Prenom : document.querySelector(".comErreurPrenom"),
+//         EmpComm_adresse : document.querySelector(".comErreurAdresse"),
+//         EmpComm_codePostal : document.querySelector(".comErreurCodePostal"),
+//         EmpComm_adresseMail : document.querySelector(".clientEmail"),
+//         EmpComm_Telephone : document.querySelector(".clientTelephone")
+//    },
+//    Verification : {
+//         control_nomdeFamille : verifString,
+//         control_Prenom : verifString,
+//         control_adresse : verifSpecialCharacter,
+//         control_codePostal :verifCodePostal,
+//         control_adresseMail : verifMail,
+//         controlTelephone : verifTelephone
+//    },
+
+   nomdeFamille : {
+    emplacement: document.querySelector("#clientNom"),
+    EmpComm : document.querySelector(".comErreurNom"),
+    control : verifString,
+   },
+   Prenom : {
+    emplacement: document.querySelector("#clientPrenom"),
+    EmpComm : document.querySelector(".comErreurPrenom"),
+    control : verifString,
+   },
+   adresse : {
+    emplacement: document.querySelector("#clientAdresse"),
+    EmpComm : document.querySelector(".comErreurAdresse"),
+    control : verifSpecialCharacter,
+   },
+   codePostal : {
+    emplacement: document.querySelector("#clientCodePostal"),
+    EmpComm : document.querySelector(".comErreurCodePostal"),
+    control : verifCodePostal,
+   },
+   adresseMail : {
+    emplacement: document.querySelector("#clientEmail"),
+    EmpComm : document.querySelector(".comErreurMail"),
+    control : verifMail,
+   },
+   Telephone : {
+    emplacement: document.querySelector("#clientEmail"),
+    EmpComm : document.querySelector(".comErreurTelephone"),
+    control : verifTelephone,
+   },
+}
+
+
+
+for(var champ in GLOBAL){
+    GLOBAL[champ].emplacement.addEventListener("input", function () {
+        if (GLOBAL[champ].control.test(GLOBAL[champ].emplacement.value) == true) {
+            GLOBAL[champ].emplacement.style.border = " 2px solid green"
+            GLOBAL[champ].EmpComm.style.display = "none"
+    
+        }
+        else if (GLOBAL[champ].control.test(GLOBAL[champ].emplacement.value) == false) {
+            GLOBAL[champ].emplacement.style.border = " 2px solid red";
+            GLOBAL[champ].EmpComm.style.display = "block"
+            GLOBAL[champ].EmpComm.style.color = "red"
+        }
+    })
+}
+
+
+// Emplacements des commentaires 
+
+
+// Verification a effectuer 
+
+
+
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 // On vé&rifie si les données entrées sont correcte
 // Si c'est le cas, le commentaire reste (ou devient) inexistant
 // S'il est mauvais le commentaire apparait en rouge
 
-nomdeFamille.addEventListener("mousemove", function () {
+nomdeFamille.addEventListener("input", function () {
     if (verifString.test(nomdeFamille.value) == true) {
         nomdeFamille.style.border = " 2px solid green"
         document.querySelector(".comErreurNom").style.display = "none"
@@ -45,14 +132,14 @@ Prenom.addEventListener("input", function () {
 })
 
 adresse.addEventListener("input", function () {
-    if (verifSpecialCharacter.test(adresse.value) == false) {
-        adresse.style.border = " 2px solid green"
-        document.querySelector(".comErreurAdresse").style.display = "none"
-    }
-    else if (verifSpecialCharacter.test(adresse.value) == true) {
+    if (verifSpecialCharacter.test(adresse.value) == true) {
         adresse.style.border = " 2px solid red";
         document.querySelector(".comErreurAdresse").style.display = "block"
         document.querySelector(".comErreurAdresse").style.color = "red"
+    }
+    else if (verifSpecialCharacter.test(adresse.value) == false) {
+        adresse.style.border = " 2px solid green"
+        document.querySelector(".comErreurAdresse").style.display = "none"
     }
 })
 
@@ -92,51 +179,32 @@ Telephone.addEventListener("input", function () {
     }
 })
 
-console.log(nomdeFamille)
-
-// Fonction qui intervient lors du clique du bouton, elle vérifie les champs affiche un promp
-// et ajoute une ligne sous l'élément en erreur
-let ValiderPAnier = function () {
-    if (document.querySelector(".monPrixTotal").innerText == "0€") {
-        window.alert("Votre panier est vide")
-    } else {
-        if (verifString.test(nomdeFamille.value) == false) {
-            window.alert("Merci d'entrer un nom de famille valide")
-        }
-        else if (verifString.test(Prenom.value) == false) {
-            window.alert("Merci d'entrer un prénom valide")
-        }
-        else if (verifSpecialCharacter.test(adresse.value) == true) {
-            window.alert("Merci d'entrer une adresse postale valide")
-        }
-        else if (verifCodePostal.test(codePostal.value) == false) {
-            window.alert("Merci d'entrer un code postal valide")
-        }
-        else if (verifMail.test(adresseMail.value) == false) {
-            window.alert("Merci d'entrer une adresse email correcte")
-        }
-        else if (verifTelephone.test(Telephone.value) == false) {
-            window.alert("Merci d'entrer un numéro de téléphone correct")
-        }
-        else {
-            window.alert("Merci pour votre commande")
-        }
-    }
-}
+    //Préparation de l'élément Articles pour la requete POST
+    var monPanierLocalStorage = localStorage.panier
+    var myPanierlocalStorageparse = JSON.parse(monPanierLocalStorage)
 
 const requetePOST = function () {
-
+        //Préparation de l'élément Articles pour la requete POST
+    var monPanierLocalStorage = localStorage.panier
+    var myPanierlocalStorageparse = JSON.parse(monPanierLocalStorage)
+        //Préparation de l'élément Articles pour la requete POST
     let contact = {
-        lastNAme: document.querySelector("#clientNom").value,
-        firstNAme: document.querySelector("#clientPrenom").value,
-        adress: document.querySelector("#clientAdresse").value,
+        lastName: document.querySelector("#clientNom").value,
+        firstName: document.querySelector("#clientPrenom").value,
+        address: document.querySelector("#clientAdresse").value,
         city: document.querySelector(".blocSelecteur__selectionVille").value,
         email: document.querySelector("#clientEmail").value
     }
 
-    let products = [
-        localStorage
-    ]
+    // J'importe et structure les données pour convenir à la requete POST
+    let products = myPanierlocalStorageparse
+    productsID = []
+    for(i=0 ; i < products.length ; i++){
+        productsID.push(myPanierlocalStorageparse[i].theID)
+    }
+
+    // Je définis la version finale de mon élément pour la fetch 
+    let json = { contact: contact, products: productsID }
 
 
     const promise01 = function requetePost() {
@@ -147,22 +215,32 @@ const requetePOST = function () {
                     'Content-Type': 'application/json'
                 },
                 method: "post",
-                body: JSON.stringify({ contact, products })
+                body: JSON.stringify(json)
             })
             .then(function (res) { console.log(res) })
             .catch(function (res) { console.log(res) })
-        console.log(JSON.stringify(contact, products))
-
     }
     promise01()
+}
+
+// affecter la fonction à mon bouton du formulaire :  "valider la commande"
+ValiderPanier = function(){
 
 }
 
 
-// affecter la fonction à mon bouton du formulaire :  "valider la commande"
 // cela lance la validation du panier et la requete API 
 document.querySelector(".validerLaCommande").addEventListener("click", function () {
-    ValiderPAnier()
-    requetePOST()
-})
+    if (verifString.test(nomdeFamille.value) == true &&
+        verifString.test(Prenom.value) == true && 
+        verifSpecialCharacter.test(adresse.value) == false && 
+        verifCodePostal.test(codePostal.value) == true && 
+        verifMail.test(adresseMail.value) == true && 
+        verifTelephone.test(Telephone.value) == true)
+    {
+        console.log('cest tout bon ')
+        requetePOST()
+    }else{
+        console.log('Vérifier les champs')
+    }})
 

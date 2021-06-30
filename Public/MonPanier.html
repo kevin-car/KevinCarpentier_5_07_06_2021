@@ -24,11 +24,12 @@
     <link rel="stylesheet" href="../style.css">
 
     <!-- fichier de script -->
-    <script type="text/javascript" src="../js/pagePanierRecupLocalStorage.js" defer></script>
-    <script type="text/javascript" src="../js/viderPanier.js" defer></script>
-    <script type="text/javascript" src="../js/formulaire.js" defer></script>
-    <script type="text/javascript" src="../js/fetchApiGouv.js" defer></script>
-    <script type="text/javascript" src="../js/supprimerArticle.js" defer></script>
+    <script src="../js/pagePanierRecupLocalStorage.js" defer></script>
+    <script src="../js/viderPanier.js" defer></script>
+    <script src="../js/formulaire.js" defer></script>
+    <script src="../js/fetchApiGouv.js" defer></script>
+    <script src="../js/supprimerArticle.js" defer></script>
+
 
 </head>
 
@@ -68,14 +69,17 @@
                     <tbody class="coeurTableau">
                     </tbody>
                     <tbody class=" table table-danger prixTotal">
-                        <td class="bg-secondary"></th>
-                        <td class="bg-secondary"></th>                        <td class="bg-secondary"></th>
-
-                        <td class="bg-secondary"></th>
-                        <td class="bg-secondary">Prix Total : </th>
-                        <td class="bg-secondary monPrixTotal">0€</th>
+                        <tr>
+                            <td class="bg-secondary"></td>
+                            <td class="bg-secondary"></td>
+                            <td class="bg-secondary"></td>
+                            <td class="bg-secondary"></td>
+                            <td class="bg-secondary">Prix Total : </td>
+                            <td class="bg-secondary monPrixTotal">0€</td>
+                        </tr>
                     </tbody>
                 </table>
+                <p id="commandeOK">Votre Commande a bien été passée et sera livrée au plus tôt. Merci de votre confiance</p>
                 <div class="container container__button">
                     <button type="button" class="btn btn-warning pull-right viderLePanier">VIDER LE PANIER</button>
                 </div>
@@ -83,12 +87,14 @@
             <div class="panier__contact ">
             </div>
 
+
+
         </div>
         <!-- FORMULAIRE -->
         <div class="formulaire2 container">
             <!-- NOM PRENOM -->
             <div class="row form-group blocFormulaire">
-                <label for="nomPrenom" class="col-sm-4">Nom Complet</label>
+                <label class="col-sm-4">Nom Complet</label>
                 <div class="col-sm-3 ">
                     <input type="text" class="form-control" id="clientNom" placeholder="NOM">
                     <p class="comErreur comErreurNom">Merci d'entrer un nom correct</p>
@@ -100,7 +106,7 @@
             </div>
             <!-- ADRESSE -->
             <div class="mb-3 row blocFormulaire">
-                <label for="adresse" class="col-sm-4 ">Adresse </label>
+                <label class="col-sm-4 ">Adresse </label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="clientAdresse"
                         placeholder="Exemple : 3 impasse qui n'existe pas">
@@ -110,7 +116,7 @@
             </div>
             <!-- CODE POSTAL -->
             <div class="mb-3 row blocFormulaire">
-                <label for="codePostal" class="col-sm-4 ">Code Postal</label>
+                <label class="col-sm-4 ">Code Postal</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="clientCodePostal" placeholder="Exemple : 75001">
                     <p class="comErreur comErreurCodePostal">Merci d'entrer un code postal correcte</p>
@@ -119,7 +125,7 @@
             </div>
             <!-- VILLE -->
             <div class="mb-3 row blocFormulaire">
-                <label for="Ville" class="col-sm-4 ">Ville</label>
+                <label class="col-sm-4 ">Ville</label>
                 <div class="col-sm-6">
                     <select class="form-control blocSelecteur__selectionVille">
                     </select>
@@ -128,7 +134,7 @@
             </div>
             <!-- EMAIL -->
             <div class="mb-3 row blocFormulaire">
-                <label for="email" class="col-sm-4 ">Adresse Email</label>
+                <label class="col-sm-4 ">Adresse Email</label>
                 <div class="col-sm-6">
                     <input type="email" class="form-control" id="clientEmail" placeholder="Exemple : orinco@gmail.com ">
                     <p class="comErreur comErreurMail">Merci d'entrer une adresse mail correcte</p>
@@ -137,7 +143,7 @@
             </div>
             <!-- TELEPHONE -->
             <div class="mb-3 row blocFormulaire">
-                <label for="telephone" class="col-sm-4 ">Téléphone</label>
+                <label class="col-sm-4 ">Téléphone</label>
                 <div class="col-sm-6">
                     <input type="tel" class="form-control" id="clientTelephone" placeholder="0607080910 ">
                     <p class="comErreur comErreurTelephone">Merci d'entrer un numéro de téléphone correct</p>

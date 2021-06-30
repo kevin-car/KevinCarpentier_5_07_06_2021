@@ -3,6 +3,7 @@ let verifString = /[a-zA-Z]{2}$/;
 let verifNumber = /[0-9]/;
 let verifMail = /^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i;
 let verifSpecialCharacter = /[§!@#$%^&*(),.?":{}|<>]/;
+let verifAdresse =  /([0-9]*) ?([a-zA-Z,\. ]*) ?([0-9]{5}) ?([a-zA-Z]*)/
 
 let verifCodePostal = /^[0-9]{5}$/
 let verifTelephone = /\+?\(?\d{2,4}\)?[\d\s-]{8,}/
@@ -14,93 +15,6 @@ var adresse = document.querySelector("#clientAdresse")
 var codePostal = document.querySelector("#clientCodePostal")
 var adresseMail = document.querySelector("#clientEmail")
 var Telephone = document.querySelector("#clientTelephone")
-
-// on retrouve les input grâce à leurs ID
-var GLOBAL = {
-//     Input_DOM : {
-//         nomdeFamille: document.querySelector("#clientNom"),
-//         Prenom : document.querySelector("#clientPrenom"),
-//         adresse : document.querySelector("#clientAdresse"),
-//         codePostal : document.querySelector("#clientCodePostal"),
-//         adresseMail : document.querySelector("#clientEmail"),
-//         Telephone : document.querySelector("#clientTelephone")
-//    },
-//    Commentaire : {
-//         EmpComm_nomdeFamille : document.querySelector(".comErreurNom"),
-//         EmpComm_Prenom : document.querySelector(".comErreurPrenom"),
-//         EmpComm_adresse : document.querySelector(".comErreurAdresse"),
-//         EmpComm_codePostal : document.querySelector(".comErreurCodePostal"),
-//         EmpComm_adresseMail : document.querySelector(".clientEmail"),
-//         EmpComm_Telephone : document.querySelector(".clientTelephone")
-//    },
-//    Verification : {
-//         control_nomdeFamille : verifString,
-//         control_Prenom : verifString,
-//         control_adresse : verifSpecialCharacter,
-//         control_codePostal :verifCodePostal,
-//         control_adresseMail : verifMail,
-//         controlTelephone : verifTelephone
-//    },
-
-   nomdeFamille : {
-    emplacement: document.querySelector("#clientNom"),
-    EmpComm : document.querySelector(".comErreurNom"),
-    control : verifString,
-   },
-   Prenom : {
-    emplacement: document.querySelector("#clientPrenom"),
-    EmpComm : document.querySelector(".comErreurPrenom"),
-    control : verifString,
-   },
-   adresse : {
-    emplacement: document.querySelector("#clientAdresse"),
-    EmpComm : document.querySelector(".comErreurAdresse"),
-    control : verifSpecialCharacter,
-   },
-   codePostal : {
-    emplacement: document.querySelector("#clientCodePostal"),
-    EmpComm : document.querySelector(".comErreurCodePostal"),
-    control : verifCodePostal,
-   },
-   adresseMail : {
-    emplacement: document.querySelector("#clientEmail"),
-    EmpComm : document.querySelector(".comErreurMail"),
-    control : verifMail,
-   },
-   Telephone : {
-    emplacement: document.querySelector("#clientEmail"),
-    EmpComm : document.querySelector(".comErreurTelephone"),
-    control : verifTelephone,
-   },
-}
-
-
-
-for(var champ in GLOBAL){
-    GLOBAL[champ].emplacement.addEventListener("input", function () {
-        if (GLOBAL[champ].control.test(GLOBAL[champ].emplacement.value) == true) {
-            GLOBAL[champ].emplacement.style.border = " 2px solid green"
-            GLOBAL[champ].EmpComm.style.display = "none"
-    
-        }
-        else if (GLOBAL[champ].control.test(GLOBAL[champ].emplacement.value) == false) {
-            GLOBAL[champ].emplacement.style.border = " 2px solid red";
-            GLOBAL[champ].EmpComm.style.display = "block"
-            GLOBAL[champ].EmpComm.style.color = "red"
-        }
-    })
-}
-
-
-// Emplacements des commentaires 
-
-
-// Verification a effectuer 
-
-
-
-
-// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 // On vé&rifie si les données entrées sont correcte
 // Si c'est le cas, le commentaire reste (ou devient) inexistant
@@ -136,10 +50,13 @@ adresse.addEventListener("input", function () {
         adresse.style.border = " 2px solid red";
         document.querySelector(".comErreurAdresse").style.display = "block"
         document.querySelector(".comErreurAdresse").style.color = "red"
+
     }
     else if (verifSpecialCharacter.test(adresse.value) == false) {
-        adresse.style.border = " 2px solid green"
+        adresse.style.border = " 2px solid green";
         document.querySelector(".comErreurAdresse").style.display = "none"
+        document.querySelector(".comErreurAdresse").style.color = "green"
+
     }
 })
 
@@ -179,12 +96,14 @@ Telephone.addEventListener("input", function () {
     }
 })
 
+
+
     //Préparation de l'élément Articles pour la requete POST
     var monPanierLocalStorage = localStorage.panier
     var myPanierlocalStorageparse = JSON.parse(monPanierLocalStorage)
 
 const requetePOST = function () {
-        //Préparation de l'élément Articles pour la requete POST
+    //Préparation de l'élément Articles pour la requete POST
     var monPanierLocalStorage = localStorage.panier
     var myPanierlocalStorageparse = JSON.parse(monPanierLocalStorage)
         //Préparation de l'élément Articles pour la requete POST
@@ -206,7 +125,7 @@ const requetePOST = function () {
     // Je définis la version finale de mon élément pour la fetch 
     let json = { contact: contact, products: productsID }
 
-
+    // La requete fetch(POST)
     const promise01 = function requetePost() {
         fetch("http://localhost:3000/api/teddies/order",
             {
@@ -220,27 +139,32 @@ const requetePOST = function () {
             .then(function (res) { console.log(res) })
             .catch(function (res) { console.log(res) })
     }
-    promise01()
-}
-
-// affecter la fonction à mon bouton du formulaire :  "valider la commande"
-ValiderPanier = function(){
-
+        promise01()
 }
 
 
-// cela lance la validation du panier et la requete API 
+// cela lance la validation du panier et la requete API, si le formulaire n'est pas bon, la commande est bloquée par une page d'alerte
 document.querySelector(".validerLaCommande").addEventListener("click", function () {
-    if (verifString.test(nomdeFamille.value) == true &&
+    if(document.querySelector(".monPrixTotal").textContent == "0€" ){
+        window.alert('votre panier est vide')
+    }
+    else if(verifString.test(nomdeFamille.value) &&
         verifString.test(Prenom.value) == true && 
         verifSpecialCharacter.test(adresse.value) == false && 
+        document.querySelector( ".blocSelecteur__selectionVille") !== "" &&
         verifCodePostal.test(codePostal.value) == true && 
         verifMail.test(adresseMail.value) == true && 
         verifTelephone.test(Telephone.value) == true)
-    {
-        console.log('cest tout bon ')
+        {
         requetePOST()
-    }else{
-        console.log('Vérifier les champs')
-    }})
-
+        window.localStorage.clear()
+        document.querySelector("#commandeOK").style.display = "block"
+        document.querySelector(".formulaire2 ").innerHTML = ""
+        document.querySelector(".container__button").innerHTML = ""
+        }
+        else
+        {
+            window.alert("le formulaire n'est pas correctement rempli")
+        }
+    })
+    

@@ -176,7 +176,7 @@ label {
 }
 .panier__articles {
   height: auto;
-  padding: 0, 0, 0, 0;
+  padding: 0;
 }
 .panier__contact {
   background-color: blue;
@@ -190,7 +190,18 @@ label {
 
 .comErreur {
   display: none;
-  color: redsq;
+  color: red;
+}
+
+#commandeOK {
+  color: red;
+  font-size: 4em;
+  text-align: center;
+  display: none;
+}
+
+.retourPageDaccueil {
+  display: none;
 }
 
 .photoArticle {
@@ -216,7 +227,6 @@ label {
 .blocQuantite__blocQuantite__sousBloc {
   display: flex;
   flex-direction: column;
-  align-content: right;
 }
 
 .blocSelecteur {
@@ -233,10 +243,6 @@ label {
 .blocSelecteur__exempleCouleur {
   width: 20px;
   height: 20px;
-}
-
-.blocSelecteur__selectionCouleur {
-  background-color: "Pale B";
 }
 
 .viderLePanier {

@@ -7,7 +7,7 @@
    display: flex;
     &__articles{
         height: auto;
-        padding: 0, 0, 0, 0;
+        padding: 0
 
     }
     &__contact{
@@ -24,5 +24,17 @@
 
 .comErreur{
     display: none;
-    color: redsq;
+    color: red;
+}
+
+// Les 2 élémennts qui sont masqués et dévoilés lorsque le panier est validé 
+#commandeOK{
+    color: red;
+    font-size: 4em;
+    text-align: center;
+    display: none;
+}
+
+.retourPageDaccueil{
+    display: none ;
 }

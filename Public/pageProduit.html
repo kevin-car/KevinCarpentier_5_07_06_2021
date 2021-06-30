@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,29 +10,34 @@
     <link rel="stylesheet" href="../style.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./bootstrap-5.0.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
 
     <!-- JAVASCRIPT -->
-    <script type="text/javascript" src="../js/pageProduitGetArticle.js" defer></script>   
-    <script type="text/javascript" src="../js/pageProduitAjoutLocalStorage.js" defer></script>   
-
+    <script src="../js/pageProduitGetArticle.js" defer></script>
+    <script src="../js/pageProduitAjoutLocalStorage.js" defer></script>
 </head>
+
 <body>
     <!-- BARRE DE NAVIGATION  -->
 
     <div class="page_main">
         <div class="navbar navbar-expand-md navbar-light">
-            <a class="col-12 col-sm-6 col-md-4 lg-2 logo" >
+            <a class="col-12 col-sm-6 col-md-4 lg-2 logo">
                 <img src="images/logo.png" alt="logo de Orinoco avec un caddy">
             </a>
 
-            <div class="recherche col-12 col-sm-12 col-md-4 col-lg-4" >
+            <div class="recherche col-12 col-sm-12 col-md-4 col-lg-4">
             </div>
 
             <ul class=" col-12 sm-4 col-md-4 lg-4">
-                <li class="nav-item"><a href="../index.html" class="nav-link text-dark font-weight-bold text-uppercase"> Produits </a></li>
-                <li class="nav-item"><a href="./MonPanier.html" class="nav-link text-dark font-weight-bold text-uppercase"> Mon panier </a></li>
-                <li class="nav-item"><a href="ContactezNous.html" class="nav-link text-dark font-weight-bold text-uppercase"> Nous contacter </a></li>
+                <li class="nav-item"><a href="../index.html" class="nav-link text-dark font-weight-bold text-uppercase">
+                        Produits </a></li>
+                <li class="nav-item"><a href="./MonPanier.html"
+                        class="nav-link text-dark font-weight-bold text-uppercase"> Mon panier </a></li>
+                <li class="nav-item"><a href="ContactezNous.html"
+                        class="nav-link text-dark font-weight-bold text-uppercase"> Nous contacter </a></li>
             </ul>
 
         </div>
@@ -45,25 +51,27 @@
                 <p class="blocDescription--description">C'est un bel Ours</p>
                 <!-- Cette balise sera incrémentée par l'API en JS  -->
                 <div class="blocDescription--couleurs">
-                </div> 
-                
+                </div>
+
                 <div class="blocSelecteur">
                     <select class="form-control blocSelecteur__selectionCouleur">
                     </select>
                 </div>
                 <div class="blocSelecteur__exempleCouleur"></div>
 
-        <!-- Bloc Description -->
-        <div class="blocQuantite container-fluid row">
-            <div class="blocQuantite__sousBloc ">
-                <p class="blocQuantite__prix"></p>
-                <input class="blocQuantite__prix--quantite" type="number" min="1" max="20" >
-                <button class="btn btn-success"> Ajouter au Panier</button>
+                <!-- Bloc Description -->
+                <div class="blocQuantite container-fluid row">
+                    <div class="blocQuantite__sousBloc ">
+                        <p class="blocQuantite__prix"></p>
+                        <input class="blocQuantite__prix--quantite" type="number" min="1" max="20">
+                        <button class="btn btn-success"> Ajouter au Panier</button>
+                    </div>
+                </div>
+
             </div>
-        </div>    
-
-
+        </div>
     </div>
 
 </body>
+
 </html>

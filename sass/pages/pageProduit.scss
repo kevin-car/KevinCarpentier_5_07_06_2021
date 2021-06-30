@@ -21,7 +21,6 @@
     &__blocQuantite__sousBloc{
         display: flex;
         flex-direction: column;
-        align-content: right;
     }
 }
 
@@ -40,9 +39,5 @@
         width: 20px;
         height: 20px;
     }
-
 }
 
-.blocSelecteur__selectionCouleur{
-    background-color: "Pale B";
-}

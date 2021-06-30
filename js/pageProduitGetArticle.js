@@ -63,7 +63,6 @@ function displayElements(myarticles) {
     titreAModifier.innerHTML = "Orinoco : " + myarticles.name
 
     let couleursAAjouter = document.querySelector(".blocSelecteur__selectionCouleur")
-    console.log(couleursAAjouter)
 
     for (j = 0; j < myarticles.colors.length; j++) {
         let colorName = myarticles.colors[j]

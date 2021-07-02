@@ -95,3 +95,11 @@ ul{
         font-family: Cantarell !important;
     }
 
+    @media screen and (max-width: 460px){
+        .table{
+            font-size: 0.72em !important;
+            tr{
+                font-size: 0.9rem !important;
+            }
+        }
+    }

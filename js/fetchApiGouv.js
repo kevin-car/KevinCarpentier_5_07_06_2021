@@ -1,5 +1,3 @@
-
-
 // On recupère l'endroit où est renseigné le code postal 
 CodePostal = document.querySelector("#clientCodePostal")
 CodePostal.addEventListener('input' , function(){

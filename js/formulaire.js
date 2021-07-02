@@ -50,13 +50,11 @@ adresse.addEventListener("input", function () {
         adresse.style.border = " 2px solid red";
         document.querySelector(".comErreurAdresse").style.display = "block"
         document.querySelector(".comErreurAdresse").style.color = "red"
-
     }
     else if (verifSpecialCharacter.test(adresse.value) == false) {
         adresse.style.border = " 2px solid green";
         document.querySelector(".comErreurAdresse").style.display = "none"
         document.querySelector(".comErreurAdresse").style.color = "green"
-
     }
 })
 
@@ -167,4 +165,3 @@ document.querySelector(".validerLaCommande").addEventListener("click", function 
             window.alert("le formulaire n'est pas correctement rempli")
         }
     })
-    

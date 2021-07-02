@@ -21,7 +21,6 @@ function getArticle() {
 }
 
 function displayArticle(articles) {
-
     for (let i = 0; i < articles.length; i++) {
         // je créé les petits enfants ==> balises images et bouton 
         let myImage = document.createElement("img")

@@ -291,15 +291,10 @@ label {
 }
 
 .nav-item {
-  transition: background-color 0.5s, box-shadow 0.5s;
-  border-radius: 5px;
+  background-color: yellow !important;
 }
 .nav-item:hover {
-  background-color: #cacab4 !important;
-  box-shadow: 5px 5px 5px #bdb0b0;
-}
-.nav-item:active {
-  border: 2px solid #B06DA0;
+  background-color: yellow !important;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=stylecss.map */

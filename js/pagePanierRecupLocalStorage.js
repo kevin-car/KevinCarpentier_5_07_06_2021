@@ -1,4 +1,5 @@
-if (localStorage.panier == null) {
+(function () {
+    if (localStorage.panier == null) {
     localStorage.setItem("panier", "[]")
 }
 // je recupère le localStorage
@@ -67,3 +68,4 @@ for (i = 0; i < listePrix.length; i++) {
 // On renvoie la somme total dans la case prévue à cet effet
 prixTotal.textContent = MyPriceTotal + "€"
 
+})()

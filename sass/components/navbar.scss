@@ -1,0 +1,12 @@
+.nav-item{
+    transition: background-color 0.5s, box-shadow 0.5s, ;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: rgb(202, 202, 180) !important;       
+        box-shadow:5px 5px 5px rgb(189, 176, 176) ;
+    }
+    &:active{
+        border: 2px solid #B06DA0;
+    }
+}

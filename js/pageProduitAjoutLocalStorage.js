@@ -13,18 +13,18 @@ class AjoutPanier {
 let button = document.querySelector(".btn-success")
 // Ecouteur d'événement, lors du clique, on récupère toutes les infos
 button.addEventListener("click", function () {
+    // recupérer les données saisies par l'utilisateur pour les enfermer dans des variables
     quantite = document.querySelector(".blocQuantite__prix--quantite").value
     nom = document.querySelector(".blocDescription--nomProduit").innerHTML
     couleur = document.querySelector(".blocSelecteur__selectionCouleur").value
     prixUnitaire = document.querySelector(".blocQuantite__prix strong").innerHTML
     theID = $_GET("data-id")
     console.log(quantite)
+    // Vérifier si la quantité est nulle, sinon on ajoute dans le local storage 
     if(quantite == ""){
         alert("la quantité est nulle, merci d'ajouter au minimum 1 article avant d'ajouter au panier. ")
     }else{
-
-  
-
+        // On ajoute au panier selon le model imposé par la class Ajout Panier
     let articleAjout = new AjoutPanier(nom, prixUnitaire, quantite, couleur, theID)
 
     // si le panier n'est pas présent, je créé le tableau qui contiendra mes articles [{objets}, {objet}]

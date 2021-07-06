@@ -22,6 +22,9 @@
         display: flex;
         flex-direction: column;
     }
+    &_prix--quantite{
+        margin-bottom: 10px;
+    }
 }
 
 .blocSelecteur{
@@ -40,4 +43,6 @@
         height: 20px;
     }
 }
+
+
 

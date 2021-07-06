@@ -134,7 +134,10 @@ const requetePOST = function () {
                 method: "post",
                 body: JSON.stringify(json)
             })
-            .then(function (res) { console.log(res) })
+            .then(function (res) { console.log(res)
+                document.querySelector("#commandeOK").innerHTML = console.log(res.orderId)
+
+            })
             .catch(function (res) { console.log(res) })
     }
         promise01()

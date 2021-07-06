@@ -1,9 +1,15 @@
+
+//Page Principale et règles de bases
 @import "./bases/main";
-@import "./components/articles.scss";
+// Pages secondaires
 @import "./pages/pageFormulaires.scss";
 @import "./pages/pagePanier.scss";
 @import "./pages/pageProduit.scss";
+//Composants et boutons
 @import "./components/boutonViderPanier.scss";
 @import "./components/boutonValiderCommande.scss";
 @import "./components/boutonSupprimerArticle.scss";
 @import "./components/navbar.scss";
+@import "./components/articles.scss";
+
+

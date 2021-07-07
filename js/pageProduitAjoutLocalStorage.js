@@ -12,7 +12,7 @@ class AjoutPanier {
 // Définir dans une variable quel bouton sera écouté
 let button = document.querySelector(".btn-success")
 // Ecouteur d'événement, lors du clique, on récupère toutes les infos
-button.addEventListener("click", function () {
+button.addEventListener("click",  function recupDatas () {
     // recupérer les données saisies par l'utilisateur pour les enfermer dans des variables
     quantite = document.querySelector(".blocQuantite__prix--quantite").value
     nom = document.querySelector(".blocDescription--nomProduit").innerHTML

@@ -1,6 +1,6 @@
 // On recupère l'endroit où est renseigné le code postal 
 CodePostal = document.querySelector("#clientCodePostal")
-CodePostal.addEventListener('input' , function(){
+CodePostal.addEventListener('input' , inputCodePostal = function(){
     // console.log(url) ok
     if (this.value.length == 5){
         let url = `https://geo.api.gouv.fr/communes?codePostal=${this.value}&fields=nom&format=json&geometry=centre`

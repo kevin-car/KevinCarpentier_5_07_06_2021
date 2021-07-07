@@ -35,8 +35,8 @@ function getArticle() {
         .then(function (response) {
             return response.json()
         })
-        .then(function (myarticles) {
-            return (myarticles)
+        .then(function (res) {
+            return (res)
         })
         .catch(function (error) {
             console.log("erreur du get article")

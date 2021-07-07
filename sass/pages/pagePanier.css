@@ -1,0 +1,39 @@
+.page_main_panier {
+  min-height: 100vh;
+  background-color: #F3E9F1;
+}
+
+.panier {
+  display: flex;
+}
+.panier__articles {
+  height: auto;
+  padding: 0;
+}
+.panier__contact {
+  background-color: blue;
+  height: 100px;
+}
+
+.blocFormulaire {
+  display: flex;
+  align-items: flex-start;
+}
+
+.comErreur {
+  display: none;
+  color: red;
+}
+
+#commandeOK {
+  color: red;
+  font-size: 2em;
+  text-align: center;
+  display: none;
+}
+
+.retourPageDaccueil {
+  display: none;
+}
+
+/*# sourceMappingURL=pagePanier.css.map */

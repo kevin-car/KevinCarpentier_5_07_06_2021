@@ -20,7 +20,7 @@ var Telephone = document.querySelector("#clientTelephone")
 // Si c'est le cas, le commentaire reste (ou devient) inexistant
 // S'il est mauvais le commentaire apparait en rouge
 
-nomdeFamille.addEventListener("input", function () {
+nomdeFamille.addEventListener("input", function nom () {
     if (verifString.test(nomdeFamille.value) == true) {
         nomdeFamille.style.border = " 2px solid green"
         document.querySelector(".comErreurNom").style.display = "none"
@@ -33,7 +33,7 @@ nomdeFamille.addEventListener("input", function () {
     }
 })
 
-Prenom.addEventListener("input", function () {
+Prenom.addEventListener("input", function prenom () {
     if (verifString.test(Prenom.value) == true) {
         Prenom.style.border = " 2px solid green"
         document.querySelector(".comErreurPrenom").style.display = "none"
@@ -45,7 +45,7 @@ Prenom.addEventListener("input", function () {
     }
 })
 
-adresse.addEventListener("input", function () {
+adresse.addEventListener("input", function Adresse () {
     if (verifSpecialCharacter.test(adresse.value) == true) {
         adresse.style.border = " 2px solid red";
         document.querySelector(".comErreurAdresse").style.display = "block"
@@ -58,7 +58,7 @@ adresse.addEventListener("input", function () {
     }
 })
 
-codePostal.addEventListener("input", function () {
+codePostal.addEventListener("input", function CodePostal() {
     if (verifCodePostal.test(codePostal.value) == true) {
         codePostal.style.border = " 2px solid green"
         document.querySelector(".comErreurCodePostal").style.display = "none"
@@ -70,7 +70,7 @@ codePostal.addEventListener("input", function () {
     }
 })
 
-adresseMail.addEventListener("input", function () {
+adresseMail.addEventListener("input", function AdresseMail() {
     if (verifMail.test(adresseMail.value) == true) {
         adresseMail.style.border = " 2px solid green"
         document.querySelector(".comErreurMail").style.display = "none"
@@ -82,7 +82,7 @@ adresseMail.addEventListener("input", function () {
     }
 })
 
-Telephone.addEventListener("input", function () {
+Telephone.addEventListener("input", function telephone () {
     if (verifTelephone.test(Telephone.value) == true) {
         Telephone.style.border = " 2px solid green"
         document.querySelector(".comErreurTelephone").style.display = "none"
@@ -109,9 +109,11 @@ const requetePOST = function () {
         lastName: document.querySelector("#clientNom").value,
         firstName: document.querySelector("#clientPrenom").value,
         address: document.querySelector("#clientAdresse").value,
-        city: document.querySelector(".blocSelecteur__selectionVille").value,
+        city: document.querySelector(".blocSelecteur__selectionVille option").textContent,
         email: document.querySelector("#clientEmail").value
     }
+
+    console.log(contact)
 
     // J'importe et structure les données pour convenir à la requete POST
     let products = myPanierlocalStorageparse
@@ -134,14 +136,16 @@ const requetePOST = function () {
                 method: "post",
                 body: JSON.stringify(json)
             })
-            .then(function (res) { console.log(res)
-                document.querySelector("#commandeOK").innerHTML = console.log(res.orderId)
-
-            })
+            .then(function (res) { return (res.json()) })
+            .then(function (r) { 
+                // localStorage.setItem('commande', JSON.stringify)
+                document.querySelector("#commandeOK").innerHTML = "Votre commande n°" + JSON.stringify(r.orderId).replace(/['"]+/g, '') + " a bien été validée. </br> Merci et à bientôt"
+             })
             .catch(function (res) { console.log(res) })
     }
         promise01()
 }
+
 
 
 // cela lance la validation du panier et la requete API, si le formulaire n'est pas bon, la commande est bloquée par une page d'alerte

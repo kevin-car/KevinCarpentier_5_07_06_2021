@@ -1,4 +1,4 @@
-(function () {
+(function recupLocalStorage () {
     if (localStorage.panier == null) {
     localStorage.setItem("panier", "[]")
 }

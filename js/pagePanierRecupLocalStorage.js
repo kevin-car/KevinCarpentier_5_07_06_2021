@@ -1,3 +1,5 @@
+// RECUPERE LE CONTENU DU LOCAL STORAGE POUR L'AFFICHER DANS LE PANIER
+
 (function recupLocalStorage () {
     if (localStorage.panier == null) {
     localStorage.setItem("panier", "[]")

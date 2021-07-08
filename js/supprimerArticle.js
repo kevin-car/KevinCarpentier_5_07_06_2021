@@ -1,3 +1,5 @@
+// BOUTON CROIX -- SUPPRIME L'ELEMENT DANS LE LOCAL STORAGE ET ACTUALISE LE PANIER
+
 // Tous les boutons sont dans une liste NodeList --> 
 listeDesBoutons = document.querySelectorAll(".close")
 

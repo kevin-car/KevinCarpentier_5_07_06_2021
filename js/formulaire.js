@@ -1,3 +1,5 @@
+// APPLIQUE LES REGLES REGEX ET VALIDATION DU FORMULAIRE 
+
 //Règles de Control Regex
 let verifString = /[a-zA-Z]{2}$/;
 let verifNumber = /[0-9]/;
@@ -113,8 +115,6 @@ const requetePOST = function () {
         email: document.querySelector("#clientEmail").value
     }
 
-    console.log(contact)
-
     // J'importe et structure les données pour convenir à la requete POST
     let products = myPanierlocalStorageparse
     productsID = []
@@ -138,7 +138,6 @@ const requetePOST = function () {
             })
             .then(function (res) { return (res.json()) })
             .then(function (r) { 
-                // localStorage.setItem('commande', JSON.stringify)
                 document.querySelector("#commandeOK").innerHTML = "Votre commande n°" + JSON.stringify(r.orderId).replace(/['"]+/g, '') + " a bien été validée. </br> Merci et à bientôt"
              })
             .catch(function (res) { console.log(res) })
@@ -149,7 +148,7 @@ const requetePOST = function () {
 
 
 // cela lance la validation du panier et la requete API, si le formulaire n'est pas bon, la commande est bloquée par une page d'alerte
-document.querySelector(".validerLaCommande").addEventListener("click", function () {
+document.querySelector(".validerLaCommande").addEventListener("click", function validerCommande () {
     if(document.querySelector(".monPrixTotal").textContent == "0€" ){
         window.alert('votre panier est vide')
     }

@@ -1,3 +1,4 @@
+// RECUPERE L'INFO DE L'ARTICLE DANS L'URL POUR AFFICHER L'ELEMENT
 
 // fonction permettant d'obtenir un paramètre url
 function $_GET(param) {

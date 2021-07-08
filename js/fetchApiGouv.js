@@ -1,3 +1,5 @@
+// INTERROGE L'API DU GOUVERNEMENT POUR NOUS DONNER UNE CHOIX DE VILLE
+
 // On recupère l'endroit où est renseigné le code postal 
 CodePostal = document.querySelector("#clientCodePostal")
 CodePostal.addEventListener('input' , inputCodePostal = function(){

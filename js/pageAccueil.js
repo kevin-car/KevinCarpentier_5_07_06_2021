@@ -1,3 +1,5 @@
+//RECUPERE LES ARTICLES DANS L'API ET CREE LES BLOCS 
+
 // Fonction Principale 
 Main()
 async function Main() {

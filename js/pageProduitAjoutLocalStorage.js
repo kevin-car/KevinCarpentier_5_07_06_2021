@@ -1,4 +1,6 @@
-// on créé un model qui servira de base pour le modele d'import d'article
+// AJOUTE LES ARTICLES DANS LE LOCAL STORAGE  
+
+// On créé un model qui servira de base pour le modele d'import d'article
 class AjoutPanier {
     constructor(name, price, quantite, couleur, theID) {
         this.name = name;

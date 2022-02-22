@@ -25,7 +25,7 @@ Here are the variables we include (note that the `:root` is required) that can b
 
 {{- index $match 0 -}}
 
-{{< /root.inline >}}
+{{< root.inline />}}
 ```
 
 ## Component variables
